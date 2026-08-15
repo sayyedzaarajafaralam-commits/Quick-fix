@@ -1,0 +1,14 @@
+{
+  "name": "quick-fix-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Quick Fix home appliance repair website with a Node.js backend and JSON persistence.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
