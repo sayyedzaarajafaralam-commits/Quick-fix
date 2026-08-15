@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick Fix — Premium Home Appliance Repair & Maintenance Service</title>
+  <meta name="description" content="Fast, Reliable & Trusted Home Appliance Repairs for ACs, Refrigerators, Washing Machines, Microwaves, TVs & more. Book certified doorstep technicians today!" />
+  
+  <!-- Google Fonts: Poppins & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              DEFAULT: '#0B1F3A',
+              800: '#112A4A',
+              900: '#0B1F3A',
+              950: '#061325',
+            },
+            royal: {
+              DEFAULT: '#2563EB',
+              600: '#2563EB',
+              700: '#1D4ED8',
+            },
+            accent: {
+              DEFAULT: '#F59E0B',
+              hover: '#D97706',
+            }
+          },
+          fontFamily: {
+            sans: ['Poppins', 'Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased font-sans selection:bg-blue-500 selection:text-white">
+
+  <!-- ==================== HEADER / NAVBAR ==================== -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-navy-900 text-white border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Logo -->
+        <a href="#home" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-amber-500 to-blue-600 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-wrench text-white text-xl"></i>
+          </div>
+          <div>
+            <span class="text-2xl font-extrabold tracking-tight text-white group-hover:text-blue-400 transition-colors">Quick <span class="text-amber-500">Fix</span></span>
+            <span class="block text-[10px] uppercase font-semibold text-slate-400 tracking-widest -mt-1">Appliance Care</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-200">
+          <a href="#home" class="hover:text-amber-400 transition-colors">Home</a>
+          <a href="#services" class="hover:text-amber-400 transition-colors">Services</a>
+          <a href="#why-us" class="hover:text-amber-400 transition-colors">Why Choose Us</a>
+          <a href="#how-it-works" class="hover:text-amber-400 transition-colors">How It Works</a>
+          <a href="#about" class="hover:text-amber-400 transition-colors">About</a>
+          <a href="#contact" class="hover:text-amber-400 transition-colors">Contact</a>
+        </nav>
+
+        <!-- Right Header Action Buttons -->
+        <div class="hidden lg:flex items-center gap-4">
+          <!-- Call Direct Button -->
+          <a href="tel:9967179963" class="flex items-center gap-2 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-800 px-3.5 py-2 rounded-full border border-slate-700 transition">
+            <i class="fa-solid fa-phone text-amber-500 animate-pulse"></i>
+            <span>9967179963</span>
+          </a>
+
+          <!-- Auth Links -->
+          <button onclick="openLoginModal()" class="text-sm font-semibold text-slate-300 hover:text-white transition px-2">Login</button>
+          <button onclick="openSignupModal()" class="text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-full transition shadow-md shadow-blue-600/30">Sign Up</button>
+
+          <!-- Book Service CTA -->
+          <button onclick="openBookingModal()" class="text-sm font-bold text-slate-900 bg-amber-500 hover:bg-amber-400 px-5 py-2.5 rounded-full transition shadow-lg shadow-amber-500/25 flex items-center gap-2">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Book Service</span>
+          </button>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none p-2" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-navy-950 border-b border-slate-800 px-6 py-6 transition-all">
+      <div class="flex flex-col gap-4 font-medium text-slate-200">
+        <a href="#home" class="py-2 border-b border-slate-800/60 hover:text-amber-400">Home</a>
+        <a href="#services" class="py-2 border-b border-slate-800/60 hover:text-amber-400">Services</a>
+        <a href="#why-us" class="py-2 border-b border-slate-800/60 hover:text-amber-400">Why Choose Us</a>
+        <a href="#how-it-works" class="py-2 border-b border-slate-800/60 hover:text-amber-400">How It Works</a>
+        <a href="#about" class="py-2 border-b border-slate-800/60 hover:text-amber-400">About</a>
+        <a href="#contact" class="py-2 border-b border-slate-800/60 hover:text-amber-400">Contact</a>
+
+        <div class="pt-4 flex flex-col gap-3">
+          <a href="tel:9967179963" class="flex items-center justify-center gap-2 bg-slate-800 py-2.5 rounded-xl font-semibold text-amber-400">
+            <i class="fa-solid fa-phone"></i> Call 9967179963
+          </a>
+          <div class="grid grid-cols-2 gap-3">
+            <button onclick="openLoginModal()" class="w-full bg-slate-800 py-2.5 rounded-xl font-semibold text-center">Login</button>
+            <button onclick="openSignupModal()" class="w-full bg-blue-600 py-2.5 rounded-xl font-semibold text-center">Sign Up</button>
+          </div>
+          <button onclick="openBookingModal()" class="w-full bg-amber-500 text-slate-900 py-3 rounded-xl font-bold text-center shadow-lg">Book Service Now</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="home" class="relative min-h-screen pt-32 pb-20 bg-navy-950 text-white overflow-hidden flex items-center">
+    <!-- Ambient Background Glows -->
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Text & Quick Booking Widget -->
+        <div class="lg:col-span-7 space-y-8" data-aos="fade-right">
+          <!-- Trust Badge -->
+          <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-slate-800/80 border border-slate-700/80 backdrop-blur-sm text-xs font-semibold text-amber-400">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-ping"></span>
+            <i class="fa-solid fa-shield-halved"></i> 100% Genuine Spare Parts & 90-Day Repair Warranty
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+            Professional Home Appliance Repair <span class="text-gradient">at Your Doorstep</span>
+          </h1>
+
+          <!-- Subheading -->
+          <p class="text-lg text-slate-300 font-normal max-w-2xl leading-relaxed">
+            Book trusted, background-verified technicians for ACs, refrigerators, washing machines, microwaves, televisions and more. Fast 120-minute service with transparent pricing.
+          </p>
+
+          <!-- Primary CTA Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <button onclick="openBookingModal()" class="px-8 py-4 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-base rounded-2xl transition shadow-xl shadow-amber-500/20 flex items-center gap-3 hover:-translate-y-1">
+              <i class="fa-solid fa-calendar-alt text-lg"></i>
+              <span>Book Service Now</span>
+            </button>
+            
+            <a href="#services" class="px-8 py-4 bg-slate-800/90 hover:bg-slate-800 text-white font-semibold text-base rounded-2xl border border-slate-700 transition flex items-center gap-2 hover:-translate-y-1">
+              <span>Explore Services</span>
+              <i class="fa-solid fa-arrow-right text-sm"></i>
+            </a>
+
+            <!-- Call Direct Link -->
+            <a href="tel:9967179963" class="px-6 py-4 bg-blue-600/30 hover:bg-blue-600/50 text-blue-300 font-semibold text-sm rounded-2xl border border-blue-500/40 transition flex items-center gap-2">
+              <i class="fa-solid fa-phone-volume text-amber-400"></i>
+              <span>Call: 9967179963</span>
+            </a>
+          </div>
+
+          <!-- Quick Booking Pill Widget -->
+          <form id="hero-quick-book" class="bg-slate-900/90 backdrop-blur-md border border-slate-800 p-4 rounded-2xl shadow-2xl grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-400 mb-1">Select Appliance</label>
+              <select id="hero-appliance-select" class="w-full bg-slate-800 text-white text-sm rounded-xl px-3 py-2.5 border border-slate-700 focus:outline-none focus:border-amber-400">
+                <option value="Washing Machine Repair">Washing Machine Repair</option>
+                <option value="Refrigerator Repair">Refrigerator Repair</option>
+                <option value="Air Conditioner Repair">Air Conditioner Repair</option>
+                <option value="Microwave Repair">Microwave Repair</option>
+                <option value="Television Repair">Television Repair</option>
+                <option value="Water Purifier Repair">Water Purifier Repair</option>
+                <option value="Geyser Repair">Geyser Repair</option>
+                <option value="Chimney Repair">Chimney Repair</option>
+                <option value="Fan Repair">Fan Repair</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-400 mb-1">Your Pincode</label>
+              <input type="text" placeholder="e.g. 400001" class="w-full bg-slate-800 text-white text-sm rounded-xl px-3 py-2.5 border border-slate-700 focus:outline-none focus:border-amber-400" required />
+            </div>
+            <div class="flex items-end">
+              <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm py-2.5 rounded-xl transition shadow-md shadow-blue-600/30">
+                Check Slots & Book
+              </button>
+            </div>
+          </form>
+
+        </div>
+
+        <!-- Hero Image & Floating Cards -->
+        <div class="lg:col-span-5 relative" data-aos="fade-left">
+          <!-- Main Hero Image Frame -->
+          <div class="relative rounded-3xl overflow-hidden border-2 border-slate-800 shadow-2xl bg-slate-900 group">
+            <img src="assets/images/hero_technician_repair_1785249661616.png" alt="Quick Fix technician repairing a home appliance" loading="eager" class="w-full h-[480px] object-cover object-center group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-80"></div>
+            
+            <!-- Bottom Image Overlay -->
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <div class="flex items-center gap-3 bg-navy-900/90 backdrop-blur-md p-3.5 rounded-2xl border border-slate-700/80 shadow-lg">
+                <div class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
+                  <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-sm">Background Verified Engineers</h4>
+                  <p class="text-xs text-slate-300">Over 500+ trained & certified technicians</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Graphic Badge 1 (Top Left) -->
+          <div class="absolute -top-6 -left-6 bg-slate-900/95 backdrop-blur-md border border-slate-700/90 p-4 rounded-2xl shadow-2xl hidden sm:flex items-center gap-3 animate-float">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl">
+              <i class="fa-solid fa-clock-rotate-left"></i>
+            </div>
+            <div>
+              <span class="block font-bold text-sm text-white">120 Mins</span>
+              <span class="text-xs text-slate-400">Express Doorstep Visit</span>
+            </div>
+          </div>
+
+          <!-- Floating Graphic Badge 2 (Bottom Right) -->
+          <div class="absolute -bottom-6 -right-6 bg-slate-900/95 backdrop-blur-md border border-slate-700/90 p-4 rounded-2xl shadow-2xl hidden sm:flex items-center gap-3 animate-float" style="animation-delay: 2.5s;">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-2xl">
+              <i class="fa-solid fa-star text-amber-400"></i>
+            </div>
+            <div>
+              <span class="block font-bold text-sm text-white">4.9 / 5 Rating</span>
+              <span class="text-xs text-slate-400">10,000+ Happy Clients</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== SERVICES SECTION ==================== -->
+  <section id="services" class="py-24 bg-slate-50 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-14" data-aos="fade-up">
+        <span class="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-4 py-1.5 rounded-full border border-blue-100">
+          Our Specializations
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Comprehensive Appliance Repair & Servicing
+        </h2>
+        <p class="text-slate-600 text-base">
+          From emergency breakdowns to routine preventive maintenance, our certified engineers restore your essential home appliances with genuine OEM parts.
+        </p>
+
+        <!-- Search Input Bar -->
+        <div class="pt-4 max-w-md mx-auto">
+          <div class="relative">
+            <input id="service-search-input" type="text" placeholder="Search for appliance (e.g., Refrigerator, AC, TV)..." class="w-full bg-white border border-slate-300 rounded-full pl-12 pr-4 py-3 text-sm shadow-sm focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100" />
+            <i class="fa-solid fa-magnifying-glass absolute left-4.5 top-3.5 text-slate-400"></i>
+          </div>
+        </div>
+
+        <!-- Filter Categories Tabs -->
+        <div class="flex flex-wrap justify-center gap-2 pt-6">
+          <button class="filter-btn active" data-filter="all">All Services</button>
+          <button class="filter-btn" data-filter="cooling">Cooling & AC</button>
+          <button class="filter-btn" data-filter="laundry">Laundry Care</button>
+          <button class="filter-btn" data-filter="kitchen">Kitchen Appliances</button>
+          <button class="filter-btn" data-filter="home">Home & Power</button>
+        </div>
+      </div>
+
+      <!-- Services Grid (9 Appliance Cards) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- 1. Refrigerator Repair -->
+        <div class="service-card-item service-card bg-white rounded-3xl overflow-hidden shadow-md" data-category="cooling" data-aos="fade-up">
+          <div class="relative h-56 overflow-hidden bg-slate-100">
+            <img src="assets/images/service_fridge.png" alt="Refrigerator Repair Service" loading="lazy" class="w-full h-full object-cover img-zoom" />
+            <span class="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md text-amber-400 text-xs font-bold px-3 py-1 rounded-full border border-slate-700">
+              Starts at ₹299
+            </span>
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-bold text-slate-900 service-title">Refrigerator Repair</h3>
+              <div class="flex items-center gap-1 text-amber-500 text-xs font-bold">
+                <i class="fa-solid fa-star"></i> 4.9 (1.2k)
+              </div>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed service-desc">
+              Single Door, Double Door, Side-by-Side & Inverter Fridge repair. Gas refilling, cooling issue resolution, and compressor maintenance.
+            </p>
+            <ul class="text-xs text-slate-500 space-y-1.5 pt-1">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Cooling & Gas Leakage Fix</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Thermostat & PCB Circuit Repair</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+              <button onclick="openBookingModal('Refrigerator Repair')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-calendar-plus"></i> Book Repair
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Washing Machine Repair -->
+        <div class="service-card-item service-card bg-white rounded-3xl overflow-hidden shadow-md" data-category="laundry" data-aos="fade-up" data-aos-delay="100">
+          <div class="relative h-56 overflow-hidden bg-slate-100">
+            <img src="assets/images/hero_technician_repair_1785249661616.png" alt="Washing Machine Repair Service" loading="lazy" class="w-full h-full object-cover img-zoom" />
+            <span class="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md text-amber-400 text-xs font-bold px-3 py-1 rounded-full border border-slate-700">
+              Starts at ₹249
+            </span>
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-bold text-slate-900 service-title">Washing Machine Repair</h3>
+              <div class="flex items-center gap-1 text-amber-500 text-xs font-bold">
+                <i class="fa-solid fa-star"></i> 4.9 (1.8k)
+              </div>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed service-desc">
+              Expert diagnosis for Front Load, Top Load & Semi-Automatic washers. Drum repair, spin noise fix, motor & drainage repair.
+            </p>
+            <ul class="text-xs text-slate-500 space-y-1.5 pt-1">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Drum Vibration & Noise Fix</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Water Inlet & Drain Valve Replacement</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100">
+              <button onclick="openBookingModal('Washing Machine Repair')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-calendar-plus"></i> Book Repair
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Air Conditioner Repair -->
+        <div class="service-card-item service-card bg-white rounded-3xl overflow-hidden shadow-md" data-category="cooling" data-aos="fade-up" data-aos-delay="200">
+          <div class="relative h-56 overflow-hidden bg-slate-100">
+            <img src="assets/images/service_ac.png" alt="Air Conditioner Service & Repair" loading="lazy" class="w-full h-full object-cover img-zoom" />
+            <span class="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md text-amber-400 text-xs font-bold px-3 py-1 rounded-full border border-slate-700">
+              Starts at ₹399
+            </span>
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-bold text-slate-900 service-title">Air Conditioner Repair</h3>
+              <div class="flex items-center gap-1 text-amber-500 text-xs font-bold">
+                <i class="fa-solid fa-star"></i> 4.9 (2.4k)
+              </div>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed service-desc">
+              Split AC, Window AC & Inverter AC foaming wash service, R32/R410 gas charging, PCB repair, and compressor overhaul.
+            </p>
+            <ul class="text-xs text-slate-500 space-y-1.5 pt-1">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> High-Pressure Power Jet Wash</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Gas Top-Up & Leakage Sealing</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100">
+              <button onclick="openBookingModal('Air Conditioner Repair')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-calendar-plus"></i> Book Repair
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Microwave Repair -->
+        <div class="service-card-item service-card bg-white rounded-3xl overflow-hidden shadow-md" data-category="kitchen" data-aos="fade-up">
+          <div class="relative h-56 overflow-hidden bg-slate-100">
+            <img src="assets/images/service_microwave.png" alt="Microwave Oven Repair" loading="lazy" class="w-full h-full object-cover img-zoom" />
+            <span class="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md text-amber-400 text-xs font-bold px-3 py-1 rounded-full border border-slate-700">
+              Starts at ₹199
+            </span>
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-bold text-slate-900 service-title">Microwave Repair</h3>
+              <div class="flex items-center gap-1 text-amber-500 text-xs font-bold">
+                <i class="fa-solid fa-star"></i> 4.8 (850)
+              </div>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed service-desc">
+              Convection, Solo & Grill Microwave oven fixing. Magnetron replacement, touch keypad panel repair, and heating issues.
+            </p>
+            <ul class="text-xs text-slate-500 space-y-1.5 pt-1">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Magnetron & Transformer Fix</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Turntable Motor & Glass Plate Replacement</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100">
+              <button onclick="openBookingModal('Microwave Repair')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-calendar-plus"></i> Book Repair
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Television Repair -->
+        <div class="service-card-item service-card bg-white rounded-3xl overflow-hidden shadow-md" data-category="home" data-aos="fade-up" data-aos-delay="100">
+          <div class="relative h-56 overflow-hidden bg-slate-100">
+            <img src="assets/images/service_microwave_tv_1785250158829.png" alt="Television and appliance repair service" loading="lazy" class="w-full h-full object-cover img-zoom" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+            <p class="absolute bottom-4 left-4 text-xs text-white font-semibold">Smart OLED / QLED / LED TV Care</p>
+            <span class="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md text-amber-400 text-xs font-bold px-3 py-1 rounded-full border border-slate-700">
+              Starts at ₹299
+            </span>
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-bold text-slate-900 service-title">Television Repair</h3>
+              <div class="flex items-center gap-1 text-amber-500 text-xs font-bold">
+                <i class="fa-solid fa-star"></i> 4.9 (1.5k)
+              </div>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed service-desc">
+              LED, OLED, QLED & 4K Smart TV servicing. Display panel backlighting fix, motherboard repair, sound restoration, and power module fix.
+            </p>
+            <ul class="text-xs text-slate-500 space-y-1.5 pt-1">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> No Picture / Black Screen Fix</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Motherboard & HDMI Port Repair</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100">
+              <button onclick="openBookingModal('Television Repair')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-calendar-plus"></i> Book Repair
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Water Purifier Repair -->
+        <div class="service-card-item service-card bg-white rounded-3xl overflow-hidden shadow-md" data-category="kitchen" data-aos="fade-up" data-aos-delay="200">
+          <div class="relative h-56 overflow-hidden bg-slate-800 flex items-center justify-center">
+            <div class="text-center p-6">
+              <i class="fa-solid fa-glass-water text-6xl text-cyan-400 mb-2"></i>
+              <p class="text-xs text-slate-400 font-medium">RO + UV + UF Filtration Experts</p>
+            </div>
+            <span class="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md text-amber-400 text-xs font-bold px-3 py-1 rounded-full border border-slate-700">
+              Starts at ₹199
+            </span>
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-bold text-slate-900 service-title">Water Purifier Repair</h3>
+              <div class="flex items-center gap-1 text-amber-500 text-xs font-bold">
+                <i class="fa-solid fa-star"></i> 4.9 (980)
+              </div>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed service-desc">
+              RO Membrane replacement, copper filter replacement, pump pressure repair, TDS adjustment, and periodic filter sanitization.
+            </p>
+            <ul class="text-xs text-slate-500 space-y-1.5 pt-1">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> RO Membrane & Sediment Filter Change</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Booster Pump & Solenoid Valve Fix</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100">
+              <button onclick="openBookingModal('Water Purifier Repair')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-calendar-plus"></i> Book Repair
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Geyser Repair -->
+        <div class="service-card-item service-card bg-white rounded-3xl overflow-hidden shadow-md" data-category="home" data-aos="fade-up">
+          <div class="relative h-56 overflow-hidden bg-slate-800 flex items-center justify-center">
+            <div class="text-center p-6">
+              <i class="fa-solid fa-temperature-arrow-up text-6xl text-amber-500 mb-2"></i>
+              <p class="text-xs text-slate-400 font-medium">Instant & Storage Water Heaters</p>
+            </div>
+            <span class="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md text-amber-400 text-xs font-bold px-3 py-1 rounded-full border border-slate-700">
+              Starts at ₹249
+            </span>
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-bold text-slate-900 service-title">Geyser Repair</h3>
+              <div class="flex items-center gap-1 text-amber-500 text-xs font-bold">
+                <i class="fa-solid fa-star"></i> 4.8 (720)
+              </div>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed service-desc">
+              Electric and Gas Geyser installation & repair. Heating element replacement, thermostat calibration, and water tank descaling.
+            </p>
+            <ul class="text-xs text-slate-500 space-y-1.5 pt-1">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Heating Rod & Thermostat Change</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Water Leakage & Safety Valve Fix</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100">
+              <button onclick="openBookingModal('Geyser Repair')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-calendar-plus"></i> Book Repair
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Chimney Repair -->
+        <div class="service-card-item service-card bg-white rounded-3xl overflow-hidden shadow-md" data-category="kitchen" data-aos="fade-up" data-aos-delay="100">
+          <div class="relative h-56 overflow-hidden bg-slate-800 flex items-center justify-center">
+            <div class="text-center p-6">
+              <i class="fa-solid fa-fan text-6xl text-slate-400 mb-2"></i>
+              <p class="text-xs text-slate-400 font-medium">Deep Cleaning & Motor Overhaul</p>
+            </div>
+            <span class="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md text-amber-400 text-xs font-bold px-3 py-1 rounded-full border border-slate-700">
+              Starts at ₹349
+            </span>
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-bold text-slate-900 service-title">Chimney Repair</h3>
+              <div class="flex items-center gap-1 text-amber-500 text-xs font-bold">
+                <i class="fa-solid fa-star"></i> 4.9 (610)
+              </div>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed service-desc">
+              Kitchen Chimney deep degreasing, baffle filter cleaning, blower motor repair, duct pipe replacement, and touch sensor repair.
+            </p>
+            <ul class="text-xs text-slate-500 space-y-1.5 pt-1">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Blower Suction Power Restoration</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Filter Degreasing & Oil Collector Cleaning</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100">
+              <button onclick="openBookingModal('Chimney Repair')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-calendar-plus"></i> Book Repair
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Fan Repair -->
+        <div class="service-card-item service-card bg-white rounded-3xl overflow-hidden shadow-md" data-category="home" data-aos="fade-up" data-aos-delay="200">
+          <div class="relative h-56 overflow-hidden bg-slate-800 flex items-center justify-center">
+            <div class="text-center p-6">
+              <i class="fa-solid fa-wind text-6xl text-blue-300 mb-2"></i>
+              <p class="text-xs text-slate-400 font-medium">Ceiling, Exhaust & BLDC Motor Fans</p>
+            </div>
+            <span class="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md text-amber-400 text-xs font-bold px-3 py-1 rounded-full border border-slate-700">
+              Starts at ₹149
+            </span>
+          </div>
+          <div class="p-6 space-y-4">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-bold text-slate-900 service-title">Fan Repair</h3>
+              <div class="flex items-center gap-1 text-amber-500 text-xs font-bold">
+                <i class="fa-solid fa-star"></i> 4.8 (540)
+              </div>
+            </div>
+            <p class="text-slate-600 text-sm leading-relaxed service-desc">
+              Ceiling Fan winding, BLDC fan PCB repairs, speed regulator replacement, bearing replacement, and exhaust fan motor overhaul.
+            </p>
+            <ul class="text-xs text-slate-500 space-y-1.5 pt-1">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Copper Winding & Bearing Fix</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> BLDC Remote & Receiver Repair</li>
+            </ul>
+            <div class="pt-4 border-t border-slate-100">
+              <button onclick="openBookingModal('Fan Repair')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-calendar-plus"></i> Book Repair
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== WHY CHOOSE US ==================== -->
+  <section id="why-us" class="py-24 bg-navy-950 text-white relative overflow-hidden">
+    <!-- Glow Overlay -->
+    <div class="hero-glow-1"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16" data-aos="fade-up">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-amber-500/10 px-4 py-1.5 rounded-full border border-amber-500/30">
+          The Quick Fix Standard
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Why Homeowners Trust Quick Fix
+        </h2>
+        <p class="text-slate-300 text-base">
+          We combine cutting-edge repair diagnostic tools with certified engineers to deliver unmatched service quality and peace of mind.
+        </p>
+      </div>
+
+      <!-- 7 Key Value Pillars Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Pillar 1 -->
+        <div class="bg-slate-900/90 border border-slate-800 p-8 rounded-3xl shadow-xl hover:border-blue-500/40 transition group" data-aos="fade-up">
+          <div class="w-14 h-14 rounded-2xl bg-blue-600/20 text-blue-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-user-shield"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Certified Technicians</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            100% background-checked, certified appliance engineers with rigorous brand training.
+          </p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="bg-slate-900/90 border border-slate-800 p-8 rounded-3xl shadow-xl hover:border-amber-500/40 transition group" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-14 h-14 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Same Day Service</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Rapid 120-minute technician dispatch to your doorstep for urgent breakdown cases.
+          </p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="bg-slate-900/90 border border-slate-800 p-8 rounded-3xl shadow-xl hover:border-emerald-500/40 transition group" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-box-open"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Genuine Spare Parts</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            We use strictly 100% original OEM replacement components directly sourced from manufacturers.
+          </p>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="bg-slate-900/90 border border-slate-800 p-8 rounded-3xl shadow-xl hover:border-purple-500/40 transition group" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-14 h-14 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Affordable Pricing</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Transparent rate cards with upfront quotes prior to repair work. Zero hidden fees.
+          </p>
+        </div>
+
+        <!-- Pillar 5 -->
+        <div class="bg-slate-900/90 border border-slate-800 p-8 rounded-3xl shadow-xl hover:border-cyan-500/40 transition group" data-aos="fade-up">
+          <div class="w-14 h-14 rounded-2xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-house-user"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Doorstep Service</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Complete hassle-free diagnosis and repair performed inside your home space.
+          </p>
+        </div>
+
+        <!-- Pillar 6 -->
+        <div class="bg-slate-900/90 border border-slate-800 p-8 rounded-3xl shadow-xl hover:border-rose-500/40 transition group" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-14 h-14 rounded-2xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-face-smile text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Customer Satisfaction</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Dedicated customer support helpline to ensure smooth service and complete satisfaction.
+          </p>
+        </div>
+
+        <!-- Pillar 7 -->
+        <div class="lg:col-span-2 bg-gradient-to-r from-blue-900/60 to-slate-900 border border-blue-500/30 p-8 rounded-3xl shadow-xl flex items-center gap-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-16 h-16 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center text-3xl shrink-0 font-extrabold shadow-lg shadow-amber-500/30">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-white mb-1">90-Day Warranty on All Repairs</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              If the repaired component fails within 90 days, we fix or replace it completely free of cost without questions asked.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== HOW IT WORKS ==================== -->
+  <section id="how-it-works" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16" data-aos="fade-up">
+        <span class="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-4 py-1.5 rounded-full border border-blue-100">
+          Simple 4-Step Process
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          How Quick Fix Works
+        </h2>
+        <p class="text-slate-600 text-base">
+          Getting your broken home appliance repaired has never been easier or faster.
+        </p>
+      </div>
+
+      <!-- 4 Timeline Steps Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+        
+        <!-- Step 1 -->
+        <div class="bg-slate-50 border border-slate-200/80 p-8 rounded-3xl relative text-center group hover:bg-white hover:shadow-xl transition" data-aos="fade-up">
+          <div class="step-number mx-auto mb-6 group-hover:scale-110 transition-transform">1</div>
+          <div class="text-amber-500 text-3xl mb-4">
+            <i class="fa-solid fa-list-check"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Choose Service</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Select your appliance type (AC, Fridge, Washer, TV, etc.) and describe the fault.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-slate-50 border border-slate-200/80 p-8 rounded-3xl relative text-center group hover:bg-white hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
+          <div class="step-number mx-auto mb-6 group-hover:scale-110 transition-transform">2</div>
+          <div class="text-blue-600 text-3xl mb-4">
+            <i class="fa-solid fa-calendar-days"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Book Appointment</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Pick your preferred date and convenient time slot for doorstep inspection.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-slate-50 border border-slate-200/80 p-8 rounded-3xl relative text-center group hover:bg-white hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
+          <div class="step-number mx-auto mb-6 group-hover:scale-110 transition-transform">3</div>
+          <div class="text-emerald-500 text-3xl mb-4">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Technician Visits</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Our certified technician arrives equipped with genuine tools and replacement spare parts.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bg-slate-50 border border-slate-200/80 p-8 rounded-3xl relative text-center group hover:bg-white hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="300">
+          <div class="step-number mx-auto mb-6 group-hover:scale-110 transition-transform">4</div>
+          <div class="text-purple-600 text-3xl mb-4">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Appliance Repaired</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Testing completed, digital bill generated, and your 90-day warranty is activated!
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== ANIMATED STATISTICS SECTION ==================== -->
+  <section id="stats-section" class="py-16 bg-navy-900 text-white border-y border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        
+        <div class="space-y-2" data-aos="zoom-in">
+          <div class="text-4xl sm:text-5xl font-extrabold text-amber-400 counter-val" data-target="10000" data-suffix="+">0</div>
+          <p class="text-sm font-semibold text-slate-300">Happy Customers</p>
+        </div>
+
+        <div class="space-y-2" data-aos="zoom-in" data-aos-delay="100">
+          <div class="text-4xl sm:text-5xl font-extrabold text-blue-400 counter-val" data-target="500" data-suffix="+">0</div>
+          <p class="text-sm font-semibold text-slate-300">Expert Technicians</p>
+        </div>
+
+        <div class="space-y-2" data-aos="zoom-in" data-aos-delay="200">
+          <div class="text-4xl sm:text-5xl font-extrabold text-emerald-400 counter-val" data-target="20" data-suffix="+">0</div>
+          <p class="text-sm font-semibold text-slate-300">Cities Covered</p>
+        </div>
+
+        <div class="space-y-2" data-aos="zoom-in" data-aos-delay="300">
+          <div class="text-4xl sm:text-5xl font-extrabold text-purple-400 counter-val" data-target="98" data-suffix="%">0</div>
+          <p class="text-sm font-semibold text-slate-300">Satisfaction Rate</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== ABOUT QUICK FIX ==================== -->
+  <section id="about" class="py-24 bg-slate-50 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Image Left Column -->
+        <div class="lg:col-span-6 relative" data-aos="fade-right">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+            <img src="assets/images/hero_technician_repair_1785249661616.png" alt="Quick Fix service technician" loading="lazy" class="w-full h-[450px] object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white p-4">
+              <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Quality Workmanship</span>
+              <h4 class="text-xl font-bold mt-1">Direct Brand-Trained Specialists</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Right Column -->
+        <div class="lg:col-span-6 space-y-6" data-aos="fade-left">
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-4 py-1.5 rounded-full border border-blue-100">
+            About Quick Fix
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-snug">
+            Your Trusted Partner for Fast, Professional Home Repairs
+          </h2>
+          <p class="text-slate-600 text-base leading-relaxed">
+            Quick Fix provides reliable home appliance repair services with trained professionals, quality workmanship, genuine spare parts, and customer-focused support. Founded with the mission to eliminate repair friction, we bring state-of-the-art diagnostic standards straight to your residence.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="flex items-center gap-3 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+              <i class="fa-solid fa-certificate text-2xl text-blue-600"></i>
+              <div>
+                <h4 class="font-bold text-sm text-slate-900">Certified Engineers</h4>
+                <p class="text-xs text-slate-500">Rigorous skill testing</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+              <i class="fa-solid fa-shield-cat text-2xl text-amber-500"></i>
+              <div>
+                <h4 class="font-bold text-sm text-slate-900">Genuine OEM Parts</h4>
+                <p class="text-xs text-slate-500">Zero counterfeit guarantee</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <button onclick="openBookingModal()" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm rounded-2xl transition shadow-lg shadow-blue-600/30">
+              Schedule Doorstep Inspection
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== CUSTOMER TESTIMONIALS ==================== -->
+  <section class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16" data-aos="fade-up">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-500 bg-amber-50 px-4 py-1.5 rounded-full border border-amber-100">
+          Client Feedback
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Loved by Thousands of Households
+        </h2>
+        <p class="text-slate-600 text-base">
+          Read verified experiences from homeowners who depend on Quick Fix for their appliance care.
+        </p>
+      </div>
+
+      <!-- Testimonials Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Review 1 -->
+        <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl shadow-sm space-y-4 flex flex-col justify-between" data-aos="fade-up">
+          <div class="space-y-3">
+            <div class="flex items-center gap-1 text-amber-400 text-sm">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-700 text-sm italic leading-relaxed">
+              "My double door refrigerator stopped cooling suddenly on a weekend. Quick Fix technician arrived within 90 minutes and replaced the damaged defrost thermostat with genuine parts. Amazing speed!"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-200">
+            <div class="w-11 h-11 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-sm">
+              RK
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-slate-900">Rajesh Kumar</h4>
+              <span class="text-xs text-slate-500">Fridge Repair • Mumbai</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl shadow-sm space-y-4 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+          <div class="space-y-3">
+            <div class="flex items-center gap-1 text-amber-400 text-sm">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-700 text-sm italic leading-relaxed">
+              "Outstanding AC foaming service! My split AC cooling had degraded severely. After Quick Fix deep jet wash, it's chilling like brand new. Very polite and tidy technician."
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-200">
+            <div class="w-11 h-11 rounded-full bg-amber-500 text-white font-bold flex items-center justify-center text-sm">
+              PS
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-slate-900">Pooja Sharma</h4>
+              <span class="text-xs text-slate-500">AC Servicing • Thane</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="bg-slate-50 border border-slate-200 p-8 rounded-3xl shadow-sm space-y-4 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+          <div class="space-y-3">
+            <div class="flex items-center gap-1 text-amber-400 text-sm">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-700 text-sm italic leading-relaxed">
+              "Our front load washer drum was making loud grinding sounds. The engineer diagnosed worn bearings immediately, quoted upfront reasonable charges, and fixed it seamlessly!"
+            </p>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t border-slate-200">
+            <div class="w-11 h-11 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-sm">
+              AM
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-slate-900">Amit Mehta</h4>
+              <span class="text-xs text-slate-500">Washing Machine Repair • Navi Mumbai</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== CONTACT SECTION ==================== -->
+  <section id="contact" class="py-24 bg-navy-950 text-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Left Info & Phone Number Direct Links -->
+        <div class="lg:col-span-5 space-y-8" data-aos="fade-right">
+          <div class="space-y-3">
+            <span class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-amber-500/10 px-4 py-1.5 rounded-full border border-amber-500/30">
+              Get In Touch
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+              Need Immediate Repair Support?
+            </h2>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Call or WhatsApp our 24/7 customer helpline directly, or fill out the request form to schedule an instant inspection call back.
+            </p>
+          </div>
+
+          <!-- Contact Details Cards -->
+          <div class="space-y-4">
+            
+            <!-- Primary Phone -->
+            <a href="tel:9967179963" class="flex items-center gap-4 bg-slate-900/90 border border-slate-800 p-5 rounded-2xl hover:border-amber-500/50 transition group">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl shrink-0 group-hover:scale-110 transition-transform">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <span class="block text-xs text-slate-400 font-medium">Direct Phone Helpline</span>
+                <span class="text-lg font-bold text-white group-hover:text-amber-400 transition">9967179963</span>
+              </div>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/919967179963" target="_blank" class="flex items-center gap-4 bg-slate-900/90 border border-slate-800 p-5 rounded-2xl hover:border-emerald-500/50 transition group">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl shrink-0 group-hover:scale-110 transition-transform">
+                <i class="fa-brands fa-whatsapp text-2xl"></i>
+              </div>
+              <div>
+                <span class="block text-xs text-slate-400 font-medium">Instant WhatsApp Support</span>
+                <span class="text-lg font-bold text-white group-hover:text-emerald-400 transition">+91 9967179963</span>
+              </div>
+            </a>
+
+            <!-- Email -->
+            <div class="flex items-center gap-4 bg-slate-900/90 border border-slate-800 p-5 rounded-2xl">
+              <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <span class="block text-xs text-slate-400 font-medium">Official Email</span>
+                <span class="text-sm font-bold text-white">support@quickfixrepair.in</span>
+              </div>
+            </div>
+
+            <!-- Address -->
+            <div class="flex items-center gap-4 bg-slate-900/90 border border-slate-800 p-5 rounded-2xl">
+              <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <span class="block text-xs text-slate-400 font-medium">Headquarters Address</span>
+                <span class="text-xs text-slate-300 font-medium">Quick Fix Tech Hub, Tech Park Phase 2, Central Business District</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Google Maps Interactive Placeholder -->
+          <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden p-4 text-center">
+            <div class="h-32 bg-slate-800/80 rounded-xl flex items-center justify-center flex-col gap-2">
+              <i class="fa-solid fa-map-location-dot text-3xl text-amber-500"></i>
+              <span class="text-xs text-slate-400 font-medium">Serving 20+ Major Cities Nationwide</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Contact Form Column -->
+        <div class="lg:col-span-7" data-aos="fade-left">
+          <div class="bg-slate-900/95 border border-slate-800 p-8 sm:p-10 rounded-3xl shadow-2xl space-y-6">
+            <div>
+              <h3 class="text-2xl font-bold text-white">Send Us a Direct Message</h3>
+              <p class="text-slate-400 text-xs mt-1">Our customer consultant will contact you back within 15 minutes.</p>
+            </div>
+
+            <form id="quick-contact-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1">Your Full Name</label>
+                  <input type="text" placeholder="e.g. Ramesh Patel" class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-400" required />
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1">Phone Number</label>
+                  <input type="tel" placeholder="e.g. 9967179963" class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-400" required />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address</label>
+                  <input type="email" placeholder="ramesh@example.com" class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-400" required />
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-slate-300 mb-1">Appliance Required</label>
+                  <select class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-400">
+                    <option>Washing Machine Repair</option>
+                    <option>Refrigerator Repair</option>
+                    <option>Air Conditioner Repair</option>
+                    <option>Microwave Repair</option>
+                    <option>Television Repair</option>
+                    <option>Water Purifier Repair</option>
+                    <option>Geyser Repair</option>
+                    <option>Chimney Repair</option>
+                    <option>Fan Repair</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">Describe Appliance Issue</label>
+                <textarea rows="4" placeholder="Please mention the issue (e.g. Not cooling, loud drum noise, water leak)..." class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-400" required></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-4 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-base rounded-xl transition shadow-xl shadow-amber-500/20">
+                Submit Request Now
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-navy-950 text-slate-400 pt-16 pb-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        
+        <!-- Brand Info -->
+        <div class="lg:col-span-2 space-y-4">
+          <a href="#home" class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-blue-600 flex items-center justify-center shadow-lg">
+              <i class="fa-solid fa-wrench text-white text-lg"></i>
+            </div>
+            <span class="text-2xl font-extrabold text-white">Quick <span class="text-amber-500">Fix</span></span>
+          </a>
+          <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+            Quick Fix is India's leading home appliance care & doorstep repair service provider. Dedicated to fast, transparent, genuine spare parts maintenance.
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <a href="#" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-blue-600 hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-rose-600 hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/919967179963" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-emerald-600 hover:text-white transition"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-blue-400 hover:text-white transition"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Quick Links</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#home" class="hover:text-amber-400 transition">Home</a></li>
+            <li><a href="#services" class="hover:text-amber-400 transition">Our Services</a></li>
+            <li><a href="#why-us" class="hover:text-amber-400 transition">Why Choose Us</a></li>
+            <li><a href="#how-it-works" class="hover:text-amber-400 transition">How It Works</a></li>
+            <li><a href="#about" class="hover:text-amber-400 transition">About Quick Fix</a></li>
+          </ul>
+        </div>
+
+        <!-- Repair Services -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Popular Repairs</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="javascript:void(0)" onclick="openBookingModal('Refrigerator Repair')" class="hover:text-amber-400 transition">Refrigerator Repair</a></li>
+            <li><a href="javascript:void(0)" onclick="openBookingModal('Washing Machine Repair')" class="hover:text-amber-400 transition">Washing Machine Repair</a></li>
+            <li><a href="javascript:void(0)" onclick="openBookingModal('Air Conditioner Repair')" class="hover:text-amber-400 transition">Air Conditioner Repair</a></li>
+            <li><a href="javascript:void(0)" onclick="openBookingModal('Microwave Repair')" class="hover:text-amber-400 transition">Microwave Repair</a></li>
+            <li><a href="javascript:void(0)" onclick="openBookingModal('Television Repair')" class="hover:text-amber-400 transition">Television Repair</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Support -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider">Contact Info</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-phone text-amber-500"></i>
+              <a href="tel:9967179963" class="text-white hover:text-amber-400 font-bold">9967179963</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+              <a href="https://wa.me/919967179963" class="hover:text-emerald-400">WhatsApp 9967179963</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-envelope text-blue-400"></i>
+              <span>support@quickfixrepair.in</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <p>© 2026 Quick Fix. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-slate-300">Privacy Policy</a>
+          <a href="#" class="hover:text-slate-300">Terms & Conditions</a>
+          <a href="#" class="hover:text-slate-300">Cancellation Policy</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ==================== FLOATING CONTACT ACTION BAR ==================== -->
+  <div class="floating-contact-bar">
+    <a href="https://wa.me/919967179963" target="_blank" class="floating-btn btn-whatsapp" title="Chat on WhatsApp (9967179963)">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a href="tel:9967179963" class="floating-btn btn-phone animate-glow" title="Call Direct (9967179963)">
+      <i class="fa-solid fa-phone"></i>
+    </a>
+  </div>
+
+
+  <!-- ==================== SERVICE BOOKING WIZARD MODAL ==================== -->
+  <div id="booking-modal" class="modal-overlay">
+    <div class="modal-container p-6 sm:p-8">
+      
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+        <div>
+          <h3 class="text-xl font-bold text-slate-900">Book Doorstep Repair Service</h3>
+          <p class="text-xs text-slate-500">Quick 3-step appointment scheduling</p>
+        </div>
+        <button onclick="closeBookingModal()" class="text-slate-400 hover:text-slate-600 p-2 text-xl">&times;</button>
+      </div>
+
+      <!-- Step Indicators -->
+      <div class="flex items-center justify-between py-6 max-w-xs mx-auto">
+        <div id="step-indicator-1" class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm">1</div>
+        <div class="flex-1 h-1 bg-slate-200 mx-2"></div>
+        <div id="step-indicator-2" class="w-8 h-8 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center font-bold text-sm">2</div>
+        <div class="flex-1 h-1 bg-slate-200 mx-2"></div>
+        <div id="step-indicator-3" class="w-8 h-8 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center font-bold text-sm">3</div>
+      </div>
+
+      <!-- Wizard Form Container -->
+      <div class="space-y-4 py-2">
+        
+        <!-- Step 1: Service Selection -->
+        <div id="wizard-step-1" class="space-y-4">
+          <label class="block text-sm font-semibold text-slate-800">1. Select Appliance Service</label>
+          <select id="booking-service-select" class="w-full border border-slate-300 rounded-xl p-3 text-sm focus:outline-none focus:border-blue-600">
+            <option value="">-- Choose Appliance --</option>
+            <option value="Refrigerator Repair">Refrigerator Repair</option>
+            <option value="Washing Machine Repair">Washing Machine Repair</option>
+            <option value="Air Conditioner Repair">Air Conditioner Repair</option>
+            <option value="Microwave Repair">Microwave Repair</option>
+            <option value="Television Repair">Television Repair</option>
+            <option value="Water Purifier Repair">Water Purifier Repair</option>
+            <option value="Geyser Repair">Geyser Repair</option>
+            <option value="Chimney Repair">Chimney Repair</option>
+            <option value="Fan Repair">Fan Repair</option>
+          </select>
+
+          <label class="block text-sm font-semibold text-slate-800">Specific Issue (Optional)</label>
+          <textarea id="booking-issue" rows="3" placeholder="Describe the fault (e.g. No cooling, water leakage, power issue)..." class="w-full border border-slate-300 rounded-xl p-3 text-sm focus:outline-none focus:border-blue-600"></textarea>
+        </div>
+
+        <!-- Step 2: Date & Time Slot -->
+        <div id="wizard-step-2" class="space-y-4 hidden">
+          <label class="block text-sm font-semibold text-slate-800">2. Preferred Service Date</label>
+          <input type="date" id="booking-date" class="w-full border border-slate-300 rounded-xl p-3 text-sm focus:outline-none focus:border-blue-600" />
+
+          <label class="block text-sm font-semibold text-slate-800">Preferred Time Slot</label>
+          <div class="grid grid-cols-3 gap-3">
+            <label class="border border-slate-200 p-3 rounded-xl text-center text-xs font-semibold cursor-pointer hover:border-blue-600">
+              <input type="radio" name="time-slot" value="Morning (9 AM - 12 PM)" checked />
+              <span class="block mt-1">9 AM - 12 PM</span>
+            </label>
+            <label class="border border-slate-200 p-3 rounded-xl text-center text-xs font-semibold cursor-pointer hover:border-blue-600">
+              <input type="radio" name="time-slot" value="Afternoon (12 PM - 4 PM)" />
+              <span class="block mt-1">12 PM - 4 PM</span>
+            </label>
+            <label class="border border-slate-200 p-3 rounded-xl text-center text-xs font-semibold cursor-pointer hover:border-blue-600">
+              <input type="radio" name="time-slot" value="Evening (4 PM - 8 PM)" />
+              <span class="block mt-1">4 PM - 8 PM</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Step 3: Contact & Address -->
+        <div id="wizard-step-3" class="space-y-4 hidden">
+          <label class="block text-sm font-semibold text-slate-800">3. Contact & Address Details</label>
+          <input type="text" id="booking-name" placeholder="Full Name" class="w-full border border-slate-300 rounded-xl p-3 text-sm focus:outline-none focus:border-blue-600" required />
+          <input type="tel" id="booking-phone" placeholder="Phone Number (e.g. 9967179963)" class="w-full border border-slate-300 rounded-xl p-3 text-sm focus:outline-none focus:border-blue-600" value="9967179963" required />
+          <textarea id="booking-address" rows="3" placeholder="Complete Doorstep Address & Landmark" class="w-full border border-slate-300 rounded-xl p-3 text-sm focus:outline-none focus:border-blue-600" required></textarea>
+        </div>
+
+        <!-- Success Confirmation -->
+        <div id="wizard-step-success" class="text-center py-6 space-y-4 hidden">
+          <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto animate-bounce">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <h4 class="text-2xl font-bold text-slate-900">Appointment Confirmed!</h4>
+          <p class="text-xs text-slate-500">Your Booking Reference ID is <span id="conf-booking-id" class="font-bold text-slate-900"></span></p>
+          
+          <div class="bg-slate-50 p-4 rounded-xl text-left text-xs text-slate-700 space-y-2 border border-slate-200">
+            <p><strong>Service:</strong> <span id="conf-service"></span></p>
+            <p><strong>Date:</strong> <span id="conf-date"></span></p>
+            <p><strong>Contact Phone:</strong> <span id="conf-phone"></span></p>
+          </div>
+
+          <div class="pt-2 flex flex-col sm:flex-row gap-3">
+            <a id="conf-whatsapp-btn" href="#" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl text-xs flex items-center justify-center gap-2">
+              <i class="fa-brands fa-whatsapp text-base"></i> Send Booking Details via WhatsApp
+            </a>
+            <button onclick="closeBookingModal(); resetBookingWizard()" class="w-full bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold py-3 rounded-xl text-xs">
+              Close Window
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Action Buttons -->
+      <div id="wizard-actions" class="flex items-center justify-between pt-6 border-t border-slate-100">
+        <button id="wizard-prev-btn" onclick="prevBookingStep()" class="text-slate-600 font-semibold text-sm hover:underline hidden">← Back</button>
+        <button id="wizard-next-btn" onclick="nextBookingStep()" class="ml-auto bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm px-6 py-3 rounded-xl transition shadow-md">Next Step →</button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ==================== LOGIN MODAL ==================== -->
+  <div id="login-modal" class="modal-overlay">
+    <div class="modal-container max-w-md p-6 sm:p-8">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100 mb-4">
+        <h3 class="text-xl font-bold text-slate-900">Welcome Back to Quick Fix</h3>
+        <button onclick="closeLoginModal()" class="text-slate-400 hover:text-slate-600 text-xl">&times;</button>
+      </div>
+      <form onsubmit="event.preventDefault(); showToast('Successfully logged in!', 'success'); closeLoginModal();" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Email or Phone Number</label>
+          <input type="text" placeholder="Enter email or 9967179963" class="w-full border border-slate-300 rounded-xl p-3 text-sm focus:outline-none focus:border-blue-600" required />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Password</label>
+          <input type="password" placeholder="••••••••" class="w-full border border-slate-300 rounded-xl p-3 text-sm focus:outline-none focus:border-blue-600" required />
+        </div>
+        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl text-sm transition">
+          Log In
+        </button>
+      </form>
+      <div class="pt-4 text-center text-xs text-slate-500">
+        Don't have an account? <button onclick="switchAuthModal('signup')" class="text-blue-600 font-bold hover:underline">Sign Up</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==================== SIGNUP MODAL ==================== -->
+  <div id="signup-modal" class="modal-overlay">
+    <div class="modal-container max-w-md p-6 sm:p-8">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100 mb-4">
+        <h3 class="text-xl font-bold text-slate-900">Create Quick Fix Account</h3>
+        <button onclick="closeSignupModal()" class="text-slate-400 hover:text-slate-600 text-xl">&times;</button>
+      </div>
+      <form onsubmit="event.preventDefault(); showToast('Account created successfully!', 'success'); closeSignupModal();" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Full Name</label>
+          <input type="text" placeholder="Your Name" class="w-full border border-slate-300 rounded-xl p-3 text-sm focus:outline-none focus:border-blue-600" required />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Phone Number</label>
+          <input type="tel" placeholder="9967179963" class="w-full border border-slate-300 rounded-xl p-3 text-sm focus:outline-none focus:border-blue-600" required />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Email Address</label>
+          <input type="email" placeholder="name@example.com" class="w-full border border-slate-300 rounded-xl p-3 text-sm focus:outline-none focus:border-blue-600" required />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Create Password</label>
+          <input type="password" placeholder="••••••••" class="w-full border border-slate-300 rounded-xl p-3 text-sm focus:outline-none focus:border-blue-600" required />
+        </div>
+        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3 rounded-xl text-sm transition">
+          Create Free Account
+        </button>
+      </form>
+      <div class="pt-4 text-center text-xs text-slate-500">
+        Already have an account? <button onclick="switchAuthModal('login')" class="text-blue-600 font-bold hover:underline">Log In</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <!-- Custom Logic Script -->
+  <script src="script.js"></script>
+</body>
+</html>
